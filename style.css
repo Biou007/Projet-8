@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   background: linear-gradient(
     135deg,
@@ -58,7 +60,7 @@ body {
 .navbar {
   position: relative;
   width: 100%;
-  max-width: 700px;
+  max-width: 600px;
   height: 60px;
   margin: 0 auto;
 
@@ -95,7 +97,7 @@ body {
 .menu a {
   text-decoration: none;
   color: #444;
-  font-weight: 500;
+  font-weight: 1000;
   transition: 0.3s;
   position: relative;
 }
@@ -157,14 +159,13 @@ body {
 .intro-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 100px;
+  gap: 80px;
 }
 
 /* texte */
 
 .intro-text {
-  max-width: 600px;
+  max-width: 800px;
 }
 
 .intro-text h2 {
@@ -210,23 +211,25 @@ body {
 
 .shape {
   position: absolute;
-  width: 380px;
-  height: 380px;
+  width: 200px;
+  height: 200px;
   background-color: #f6d6d6;
   border-radius: 50%;
   top: 40px;
   left: 60px;
   z-index: 1;
+  top: 100px;
 }
 
 .intro-image img {
   position: relative;
-  width: 360px;
-  height: 360px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   object-position: 65% center;
   border-radius: 50%;
   z-index: 2;
+  top: 75px;
 }
 
 /* Parcours */
@@ -273,12 +276,12 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
-.subtitle {
+.parcours-subtitle {
   color: #f6d6d6;
-  font-weight: 600;
+  font-weight: 900;
   letter-spacing: 2px;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .parcours-text h2 {
@@ -305,7 +308,7 @@ body {
 
 /* Compétences */
 .skills {
-  padding: 100px 0;
+  padding: 120px 0;
 }
 
 .skills-content {
@@ -342,6 +345,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
+  color: inherit;
   border-radius: 16px;
   border: 1px solid rgba(0, 0, 0, 0.15);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
@@ -354,6 +359,15 @@ body {
 .skill-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  color: black;
+}
+
+.skill-card:visited {
+  color: black;
+}
+
+.skill-card:active {
+  color: black;
 }
 
 .skill-icon {
@@ -377,4 +391,100 @@ body {
 .skill-card span {
   font-weight: 600;
   font-size: 16px;
+}
+
+/* Projets */
+.projects {
+  padding: 120px 40px;
+  background-color: #d6c9bd;
+
+  background: linear-gradient(180deg, #e8ded4 0%, #efe7df 50%, #f4efea 100%);
+}
+
+.projects-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.projects-subtitle {
+  font-weight: 1000;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: #c48a7a;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.projects-subtitle::after {
+  content: "";
+  max-width: 165px;
+  width: 100%;
+  height: 2px;
+  background: #c48a7a;
+  display: block;
+  margin-top: 8px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  aspect-ratio: 16 / 9;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: 0.4s;
+  object-position: center;
+}
+
+.project-card:hover img {
+  filter: blur(5px);
+  transform: scale(1.05);
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.45);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  padding: 30px;
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+
+  color: whitesmoke;
+  font-weight: 600;
+}
+
+.project-overlay a {
+  margin-top: 15px;
+  padding: 10px 20px;
+
+  background: #f6d6d6;
+  color: #333;
+
+  border-radius: 20px;
+  text-decoration: none;
 }

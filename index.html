@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Portfolio - Aïna</title>
+    <link rel="icon" type="image/png" href="./images/logo-title.png" />
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"
@@ -19,9 +20,9 @@
           </div>
 
           <ul class="menu">
-            <li><a href="#">Présentation</a></li>
-            <li><a href="#">Compétences</a></li>
-            <li><a href="#">Projets</a></li>
+            <li><a href="#parcours">Parcours</a></li>
+            <li><a href="#competences">Compétences</a></li>
+            <li><a href="#projets">Projets</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
         </nav>
@@ -56,21 +57,24 @@
     </section>
 
     <!--Mon parcours-->
-    <section class="parcours">
+    <section class="parcours" id="parcours">
       <div class="container">
         <div class="parcours-content">
           <div class="parcours-image">
-            <img src="images/aina.png" alt="Photo de Aina" />
+            <img
+              src="images/developpeuse.svg"
+              alt="Illustration développeuse"
+            />
           </div>
 
           <div class="parcours-text">
-            <span class="subtitle">Mon parcours</span>
+            <span class="parcours-subtitle">Mon parcours</span>
 
             <h2>Développeuse web</h2>
 
             <p>
-              Je suis actuellement en formation développeuse web chez
-              OpenClassrooms. <br />
+              Je suis actuellement en fin de formation développeuse web <br />
+              chez OpenClassrooms.<br />
               Durant cette formation, j’ai appris à créer des sites web
               dynamiques, optimiser les performances et développer des
               applications web.
@@ -87,7 +91,7 @@
 
     <!-- Compétences -->
 
-    <section class="skills">
+    <section class="skills" id="competences">
       <div class="container">
         <div class="skills-content">
           <div class="skills-text">
@@ -100,68 +104,152 @@
           </div>
 
           <div class="skills-grid">
-            <a class="skill-card" href="#">
+            <a
+              class="skill-card"
+              href="https://developer.mozilla.org/fr/docs/Web/HTML"
+              target="_blank"
+            >
               <div class="skill-icon">
-                <img src="images/html.png" alt="HTML" />
+                <img src="images/icons/html.png" alt="HTML" />
               </div>
               <span>HTML</span>
             </a>
 
-            <a class="skill-card" href="#">
+            <a
+              class="skill-card"
+              href="https://developer.mozilla.org/fr/docs/Web/CSS"
+              target="_blank"
+            >
               <div class="skill-icon">
-                <img src="images/css.png" alt="CSS" />
+                <img src="images/icons/css.png" alt="CSS" />
               </div>
               <span>CSS</span>
             </a>
 
-            <a class="skill-card" href="#">
+            <a
+              class="skill-card"
+              href="https://developer.mozilla.org/fr/docs/Web/JavaScript"
+              target="_blank"
+            >
               <div class="skill-icon">
-                <img src="images/javascript.png" alt="JavaScript" />
+                <img src="images/icons/javascript.png" alt="JavaScript" />
               </div>
               <span>JavaScript</span>
             </a>
 
-            <a class="skill-card" href="#">
+            <a class="skill-card" href="https://fr.react.dev/" target="_blank">
               <div class="skill-icon">
-                <img src="images/react.png" alt="React" />
+                <img src="images/icons/react.png" alt="React" />
               </div>
               <span>React</span>
             </a>
 
-            <a class="skill-card" href="#">
+            <a class="skill-card" href="https://nodejs.org/fr" target="_blank">
               <div class="skill-icon">
-                <img src="images/node.png" alt="Node" />
+                <img src="images/icons/node.png" alt="Node" />
               </div>
               <span>Node.js</span>
             </a>
 
-            <a class="skill-card" href="#">
+            <a
+              class="skill-card"
+              href="https://www.mongodb.com/"
+              target="_blank"
+            >
               <div class="skill-icon">
-                <img src="images/mongodb.png" alt="MongoDB" />
+                <img src="images/icons/mongodb.png" alt="MongoDB" />
               </div>
               <span>MongoDB</span>
             </a>
 
-            <a class="skill-card" href="#">
+            <a class="skill-card" href="https://git-scm.com/" target="_blank">
               <div class="skill-icon">
-                <img src="images/git.png" alt="Git" />
+                <img src="images/icons/git.png" alt="Git" />
               </div>
               <span>Git</span>
             </a>
 
-            <a class="skill-card" href="#">
+            <a
+              class="skill-card"
+              href="https://developers.google.com/search"
+              target="_blank"
+            >
               <div class="skill-icon">
-                <img src="images/seo.png" alt="SEO" />
+                <img src="images/icons/seo.png" alt="SEO" />
               </div>
               <span>SEO</span>
             </a>
 
-            <a class="skill-card" href="#">
+            <a
+              class="skill-card"
+              href="https://expressjs.com/fr/"
+              target="_blank"
+            >
               <div class="skill-icon">
-                <img src="images/express.png" alt="Express" />
+                <img src="images/icons/express.png" alt="Express" />
               </div>
               <span>Express</span>
             </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Projets -->
+
+    <!-- Projets -->
+    <section class="projects" id="projets">
+      <div class="container">
+        <span class="projects-subtitle">MES PROJETS</span>
+        <h2>
+          Quelques projets que j'ai réalisés <br />
+          durant ma formation Développeuse web.
+        </h2>
+
+        <div class="projects-grid">
+          <!-- Projet 3 -->
+          <div class="project-card">
+            <img
+              src="images/projet3.png"
+              alt="Projet 3 - Portfolio Architecte"
+            />
+
+            <div class="project-overlay">
+              <p>
+                Développement du portfolio de Sophie Bluel, architecte
+                d’intérieur : Projets récupérés dynamiquement via une API.
+                L’affichage de la galerie nécessite le démarrage du serveur
+                back-end.
+              </p>
+
+              <a href="https://biou007.github.io/Projet-3/" target="_blank"
+                >Voir le projet</a
+              >
+              <a href="https://github.com/Biou007/projet-3" target="_blank">
+                Voir le code
+              </a>
+            </div>
+          </div>
+
+          <!-- Projet 4 -->
+          <div class="project-card">
+            <img src="images/projet4.png" alt="Projet 4 - Optimisation SEO" />
+
+            <div class="project-overlay">
+              <p>
+                Optimisation des performances et du SEO du site de <br />
+                Nina Carducci, photograhe : amélioration du Lighthouse score,
+                optimisation des images, accessibilité et correction de bugs
+                JavaScript.
+              </p>
+
+              <a href="https://biou007.github.io/Projet-4/" target="_blank"
+                >Voir le projet</a
+              >
+              <a href="https://github.com/Biou007/projet-4" target="_blank">
+                Voir le code
+              </a>
+            </div>
           </div>
         </div>
       </div>
