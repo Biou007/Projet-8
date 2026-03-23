@@ -96,3 +96,30 @@ navLinks.forEach((link) => {
     }
   });
 });
+
+// Menu hamburger sur mobile
+
+const hamburger = document.querySelector(".hamburger");
+const menu = document.querySelector(".menu");
+const overlay = document.querySelector(".menu-overlay");
+
+hamburger.addEventListener("click", () => {
+  menu.classList.toggle("open");
+  overlay.classList.toggle("active");
+});
+
+overlay.addEventListener("click", () => {
+  menu.classList.remove("open");
+  overlay.classList.remove("active");
+});
+
+// pour fermer le menu hamburger et afficher le contenu derrière
+
+const links = document.querySelectorAll(".menu a");
+
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    menu.classList.remove("open");
+    overlay.classList.remove("active");
+  });
+});
