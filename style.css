@@ -920,4 +920,37 @@ button:focus-visible {
     right: 16px;
     bottom: 16px;
   }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .project-card {
+    aspect-ratio: auto;
+  }
+
+  .project-card img {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .project-overlay {
+    position: static;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(6px);
+
+    display: block;
+  }
+
+  .project-overlay-content {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .project-links {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
