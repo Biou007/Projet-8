@@ -118,11 +118,11 @@ section[id] {
 .navbar {
   position: relative;
   width: calc(100% - 40px);
-  max-width: 980px;
+  max-width: 760px;
   min-height: 64px;
   min-width: 0;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 24px 0 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -170,14 +170,10 @@ section[id] {
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 28px;
+  gap: 18px;
   padding: 0;
   margin: 0;
   flex-wrap: nowrap;
-  justify-content: center;
-  flex: 1;
-  overflow-x: hidden;
-  overflow: hidden;
 }
 
 .menu-overlay {
@@ -202,6 +198,7 @@ section[id] {
   font-weight: 700;
   transition: color 0.3s ease;
   position: relative;
+  white-space: nowrap;
 }
 
 .menu a::after {
@@ -778,9 +775,7 @@ button:focus-visible {
 /* Tablette */
 @media (max-width: 1023px) {
   .navbar {
-    max-width: 100%;
-    padding: 14px 24px;
-    border-radius: 28px;
+    max-width: 760px;
     flex-wrap: wrap;
   }
 
@@ -856,7 +851,6 @@ button:focus-visible {
     padding: 8px 14px;
     min-height: auto;
     gap: 12px;
-    border-radius: 22px;
   }
 
   .logo img {
@@ -1016,8 +1010,9 @@ button:focus-visible {
   }
 
   .project-card img {
-    height: 200px;
-    object-fit: cover;
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   .project-overlay {
@@ -1025,7 +1020,6 @@ button:focus-visible {
     opacity: 1;
     background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(6px);
-
     display: block;
   }
 
