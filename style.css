@@ -421,6 +421,7 @@ button:focus-visible {
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   margin-top: 25px;
+  align-items: stretch;
 }
 
 .about-block {
@@ -437,6 +438,10 @@ button:focus-visible {
     box-shadow 0.15s ease;
   transform-style: preserve-3d;
   overflow: hidden;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  animation: aboutFloat 4s ease-in-out infinite;
 }
 
 .about-block::before {
@@ -464,6 +469,18 @@ button:focus-visible {
   margin-bottom: 10px;
   font-size: 18px;
   color: #9f6455;
+}
+
+@keyframes aboutFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* section Parcours */
@@ -1018,6 +1035,11 @@ button:focus-visible {
 
   .about-grid {
     grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .about-block {
+    animation: none;
   }
 
   .skills-grid {
