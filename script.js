@@ -151,3 +151,62 @@ cards.forEach((card) => {
     card.style.transform = "rotateX(0) rotateY(0) scale(1)";
   });
 });
+
+// Formulaire de contact
+
+const form = document.getElementById("contact-form");
+
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const messageInput = document.getElementById("message");
+
+const nameError = document.getElementById("name-error");
+const emailError = document.getElementById("email-error");
+const messageError = document.getElementById("message-error");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  let isValid = true;
+
+  // *reset erreurs
+  nameError.textContent = "";
+  emailError.textContent = "";
+  messageError.textContent = "";
+
+  nameInput.classList.remove("input-error");
+  emailInput.classList.remove("input-error");
+  messageInput.classList.remove("input-error");
+
+  // *nom
+  if (nameInput.value.trim() === "") {
+    nameError.textContent = "Veuillez renseigner votre nom.";
+    nameInput.classList.add("input-error");
+    isValid = false;
+  }
+
+  // *email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (emailInput.value.trim() === "") {
+    emailError.textContent = "Veuillez renseigner votre email.";
+    emailInput.classList.add("input-error");
+    isValid = false;
+  } else if (!emailRegex.test(emailInput.value.trim())) {
+    emailError.textContent = "Veuillez entrer une adresse email valide.";
+    emailInput.classList.add("input-error");
+    isValid = false;
+  }
+
+  // message
+  if (messageInput.value.trim() === "") {
+    messageError.textContent = "Veuillez écrire un message.";
+    messageInput.classList.add("input-error");
+    isValid = false;
+  }
+
+  if (!isValid) return;
+
+  alert("Message envoyé !");
+  form.reset();
+});

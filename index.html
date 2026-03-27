@@ -470,38 +470,45 @@
           </div>
 
           <!-- Formulaire de contact -->
-          <form class="contact-form">
-            <input type="text" placeholder="Nom *" required />
+          <form class="contact-form" id="contact-form" novalidate>
 
-            <div class="contact-row">
-              <input type="email" placeholder="Adresse email *" required />
-              <input type="tel" placeholder="Numéro de téléphone" />
-            </div>
+  <input type="text" id="name" placeholder="Nom *" />
+  <small class="error" id="name-error"></small>
 
-            <h3 class="contact-subtitle">Parlez moi de vos besoins</h3>
+  <div class="contact-row">
+    <div class="field">
+      <input type="email" id="email" placeholder="Adresse email *" />
+      <small class="error" id="email-error"></small>
+    </div>
 
-            <div class="contact-options">
-              <label class="contact-option">
-                <input type="radio" name="besoin" value="Conseil" required />
-                <span>Conseil</span>
-              </label>
+    <input type="tel" id="phone" placeholder="Numéro de téléphone" />
+  </div>
 
-              <label class="contact-option">
-                <input type="radio" name="besoin" value="Développement web" />
-                <span>Développement web</span>
-              </label>
+  <h3 class="contact-subtitle">Parlez moi de vos besoins</h3>
 
-              <label class="contact-option">
-                <input type="radio" name="besoin" value="Référencement SEO" />
-                <span>Référencement / SEO</span>
-              </label>
-            </div>
+  <div class="contact-options">
+    <label class="contact-option">
+      <input type="radio" name="besoin" value="Conseil" required />
+      <span>Conseil</span>
+    </label>
 
-            <textarea placeholder="Message *" required></textarea>
+    <label class="contact-option">
+      <input type="radio" name="besoin" value="Développement web" />
+      <span>Développement web</span>
+    </label>
 
-            <button type="submit" class="contact-submit">Envoyer</button>
-          </form>
-        </div>
+    <label class="contact-option">
+      <input type="radio" name="besoin" value="Référencement SEO" />
+      <span>Référencement / SEO</span>
+    </label>
+  </div>
+
+  <textarea id="message" placeholder="Message *"></textarea>
+  <small class="error" id="message-error"></small>
+
+  <button type="submit" class="contact-submit">Envoyer</button>
+
+</form>
       </section>
     </main>
 

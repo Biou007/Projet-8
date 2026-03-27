@@ -817,7 +817,7 @@ button:focus-visible {
   max-width: 100%;
 
   margin: 0 auto;
-  padding: 12px 18px;
+  padding: 12px;
   border-radius: 20px;
 
   background: #fff;
@@ -875,7 +875,7 @@ button:focus-visible {
 
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 0;
 
   overflow: hidden;
   align-items: stretch;
@@ -913,8 +913,24 @@ button:focus-visible {
 /* ligne email + tel */
 .contact-row {
   display: flex;
-  gap: 20px;
+  gap: 15px;
+  flex-wrap: wrap;
   width: 100%;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.contact-row .field {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-form > .field:first-of-type {
+  margin-bottom: 20px;
+}
+
+.contact-form > .field:last-of-type {
+  margin-bottom: 20px;
 }
 
 .contact-row input {
@@ -925,7 +941,7 @@ button:focus-visible {
 /* titre besoins */
 .contact-subtitle {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 10px 0 20px;
   font-weight: 500;
   color: #444;
 }
@@ -939,6 +955,7 @@ button:focus-visible {
   flex-wrap: wrap;
   width: 100%;
   min-width: 0;
+  margin-bottom: 20px;
 }
 
 .contact-option input {
@@ -1000,6 +1017,27 @@ button:focus-visible {
 .contact-submit:hover {
   background: #efc1c1;
   transform: translateY(-2px);
+}
+
+/* message erreur */
+.field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+}
+
+.error {
+  color: #e54848;
+  font-size: 13px;
+  margin: 8px;
+  text-align: left;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.input-error {
+  border: 1px solid #e54848;
 }
 
 /* Footer */
@@ -1091,6 +1129,11 @@ button:focus-visible {
   }
 
   .skills-grid {
+    width: 100%;
+  }
+
+  .skills-text {
+    flex: none;
     width: 100%;
   }
 
@@ -1235,7 +1278,6 @@ button:focus-visible {
 
   .skill-card {
     height: auto;
-    min-height: 120px;
     min-width: 0;
     width: 100%;
     padding: 14px 10px;
@@ -1332,6 +1374,11 @@ button:focus-visible {
 
   .contact-row {
     flex-direction: column;
+    gap: 0;
+  }
+
+  .contact-row .field {
+    width: 100%;
   }
 
   .contact-links {
