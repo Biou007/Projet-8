@@ -438,6 +438,7 @@
       </section>
 
       <!-- Contact -->
+
       <section
         id="contact"
         class="contact fade-in"
@@ -467,6 +468,39 @@
               <span>Mon GitHub</span>
             </a>
           </div>
+
+          <!-- Formulaire de contact -->
+          <form class="contact-form">
+            <input type="text" placeholder="Nom *" required />
+
+            <div class="contact-row">
+              <input type="email" placeholder="Adresse email *" required />
+              <input type="tel" placeholder="Numéro de téléphone" />
+            </div>
+
+            <h3 class="contact-subtitle">Parlez moi de vos besoins</h3>
+
+            <div class="contact-options">
+              <label class="contact-option">
+                <input type="radio" name="besoin" value="Conseil" required />
+                <span>Conseil</span>
+              </label>
+
+              <label class="contact-option">
+                <input type="radio" name="besoin" value="Développement web" />
+                <span>Développement web</span>
+              </label>
+
+              <label class="contact-option">
+                <input type="radio" name="besoin" value="Référencement SEO" />
+                <span>Référencement / SEO</span>
+              </label>
+            </div>
+
+            <textarea placeholder="Message *" required></textarea>
+
+            <button type="submit" class="contact-submit">Envoyer</button>
+          </form>
         </div>
       </section>
     </main>
