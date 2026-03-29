@@ -99,28 +99,37 @@ navLinks.forEach((link) => {
 
 // Menu hamburger sur mobile
 
+// Menu hamburger sur mobile
+
 const hamburger = document.querySelector(".hamburger");
 const menu = document.querySelector(".menu");
 const overlay = document.querySelector(".menu-overlay");
 
 hamburger.addEventListener("click", () => {
-  menu.classList.toggle("open");
+  const isOpen = menu.classList.toggle("open");
   overlay.classList.toggle("active");
+  hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  hamburger.setAttribute(
+    "aria-label",
+    isOpen ? "Fermer le menu" : "Ouvrir le menu",
+  );
 });
 
 overlay.addEventListener("click", () => {
   menu.classList.remove("open");
   overlay.classList.remove("active");
+  hamburger.setAttribute("aria-expanded", "false");
+  hamburger.setAttribute("aria-label", "Ouvrir le menu");
 });
 
 // pour fermer le menu hamburger et afficher le contenu derrière
 
-const links = document.querySelectorAll(".menu a");
-
-links.forEach((link) => {
+navLinks.forEach((link) => {
   link.addEventListener("click", () => {
     menu.classList.remove("open");
     overlay.classList.remove("active");
+    hamburger.setAttribute("aria-expanded", "false");
+    hamburger.setAttribute("aria-label", "Ouvrir le menu");
   });
 });
 
@@ -169,7 +178,7 @@ form.addEventListener("submit", function (e) {
 
   let isValid = true;
 
-  // *reset erreurs
+  // reset erreurs
   nameError.textContent = "";
   emailError.textContent = "";
   messageError.textContent = "";
@@ -178,23 +187,30 @@ form.addEventListener("submit", function (e) {
   emailInput.classList.remove("input-error");
   messageInput.classList.remove("input-error");
 
-  // *nom
+  nameInput.removeAttribute("aria-invalid");
+  emailInput.removeAttribute("aria-invalid");
+  messageInput.removeAttribute("aria-invalid");
+
+  // nom
   if (nameInput.value.trim() === "") {
     nameError.textContent = "Veuillez renseigner votre nom.";
     nameInput.classList.add("input-error");
+    nameInput.setAttribute("aria-invalid", "true");
     isValid = false;
   }
 
-  // *email
+  // email
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (emailInput.value.trim() === "") {
     emailError.textContent = "Veuillez renseigner votre email.";
     emailInput.classList.add("input-error");
+    emailInput.setAttribute("aria-invalid", "true");
     isValid = false;
   } else if (!emailRegex.test(emailInput.value.trim())) {
     emailError.textContent = "Veuillez entrer une adresse email valide.";
     emailInput.classList.add("input-error");
+    emailInput.setAttribute("aria-invalid", "true");
     isValid = false;
   }
 
@@ -202,6 +218,7 @@ form.addEventListener("submit", function (e) {
   if (messageInput.value.trim() === "") {
     messageError.textContent = "Veuillez écrire un message.";
     messageInput.classList.add("input-error");
+    messageInput.setAttribute("aria-invalid", "true");
     isValid = false;
   }
 
@@ -209,4 +226,8 @@ form.addEventListener("submit", function (e) {
 
   alert("Message envoyé !");
   form.reset();
+
+  nameInput.removeAttribute("aria-invalid");
+  emailInput.removeAttribute("aria-invalid");
+  messageInput.removeAttribute("aria-invalid");
 });

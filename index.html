@@ -24,13 +24,18 @@
             <img src="images/logo-ar.png" alt="Logo AR d’Aïna" />
           </a>
 
-          <button class="hamburger" aria-label="Menu">
+          <button
+            class="hamburger"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="primary-menu"
+          >
             <span></span>
             <span></span>
             <span></span>
           </button>
 
-          <ul class="menu">
+          <ul class="menu" id="primary-menu">
             <li><a href="#accueil">Accueil</a></li>
             <li><a href="#apropos">À&nbsp;propos</a></li>
             <li><a href="#parcours">Parcours</a></li>
@@ -202,7 +207,7 @@
                 aria-label="En savoir plus sur HTML"
               >
                 <div class="skill-icon">
-                  <img src="images/icons/html.png" alt="Icône HTML" />
+                  <img src="images/icons/html.png" alt="" />
                 </div>
                 <span>HTML</span>
               </a>
@@ -215,7 +220,7 @@
                 aria-label="En savoir plus sur CSS"
               >
                 <div class="skill-icon">
-                  <img src="images/icons/css.png" alt="Icône CSS" />
+                  <img src="images/icons/css.png" alt="" />
                 </div>
                 <span>CSS</span>
               </a>
@@ -228,10 +233,7 @@
                 aria-label="En savoir plus sur JavaScript"
               >
                 <div class="skill-icon">
-                  <img
-                    src="images/icons/javascript.png"
-                    alt="Icône JavaScript"
-                  />
+                  <img src="images/icons/javascript.png" alt="" />
                 </div>
                 <span>JavaScript</span>
               </a>
@@ -244,7 +246,7 @@
                 aria-label="En savoir plus sur React"
               >
                 <div class="skill-icon">
-                  <img src="images/icons/react.png" alt="Icône React" />
+                  <img src="images/icons/react.png" alt="" />
                 </div>
                 <span>React</span>
               </a>
@@ -257,7 +259,7 @@
                 aria-label="En savoir plus sur Node.js"
               >
                 <div class="skill-icon">
-                  <img src="images/icons/node.png" alt="Icône Node.js" />
+                  <img src="images/icons/node.png" alt="" />
                 </div>
                 <span>Node.js</span>
               </a>
@@ -270,7 +272,7 @@
                 aria-label="En savoir plus sur MongoDB"
               >
                 <div class="skill-icon">
-                  <img src="images/icons/mongodb.png" alt="Icône MongoDB" />
+                  <img src="images/icons/mongodb.png" alt="" />
                 </div>
                 <span>MongoDB</span>
               </a>
@@ -283,7 +285,7 @@
                 aria-label="En savoir plus sur Git"
               >
                 <div class="skill-icon">
-                  <img src="images/icons/git.png" alt="Icône Git" />
+                  <img src="images/icons/git.png" alt="" />
                 </div>
                 <span>Git</span>
               </a>
@@ -296,7 +298,7 @@
                 aria-label="En savoir plus sur le SEO"
               >
                 <div class="skill-icon">
-                  <img src="images/icons/seo.png" alt="Icône SEO" />
+                  <img src="images/icons/seo.png" alt="" />
                 </div>
                 <span>SEO</span>
               </a>
@@ -309,7 +311,7 @@
                 aria-label="En savoir plus sur Express"
               >
                 <div class="skill-icon">
-                  <img src="images/icons/express.png" alt="Icône Express" />
+                  <img src="images/icons/express.png" alt="" />
                 </div>
                 <span>Express</span>
               </a>
@@ -444,7 +446,7 @@
         class="contact fade-in"
         aria-labelledby="contact-title"
       >
-        <div class="contact-container">
+        <section class="contact-container">
           <h2 id="contact-title">Contact</h2>
 
           <p class="contact-text">
@@ -454,7 +456,7 @@
 
           <div class="contact-links">
             <a href="mailto:kantoniaina@hotmail.com" class="contact-item">
-              <img src="images/icons/mail.png" alt="Icône email" />
+              <img src="images/icons/mail.png" alt="" />
               <span>Mon email</span>
             </a>
 
@@ -464,51 +466,96 @@
               rel="noopener noreferrer"
               class="contact-item"
             >
-              <img src="images/icons/github.png" alt="Icône GitHub" />
+              <img src="images/icons/github.png" alt="" />
               <span>Mon GitHub</span>
             </a>
           </div>
 
           <!-- Formulaire de contact -->
           <form class="contact-form" id="contact-form" novalidate>
+            <div class="field">
+              <label for="name" class="sr-only">Nom</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                autocomplete="name"
+                placeholder="Nom *"
+                required
+                aria-describedby="name-error"
+              />
+              <small class="error" id="name-error" aria-live="polite"></small>
+            </div>
 
-  <input type="text" id="name" placeholder="Nom *" />
-  <small class="error" id="name-error"></small>
+            <div class="contact-row">
+              <div class="field">
+                <label for="email" class="sr-only">Adresse email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="Adresse email *"
+                  required
+                  aria-describedby="email-error"
+                />
+                <small
+                  class="error"
+                  id="email-error"
+                  aria-live="polite"
+                ></small>
+              </div>
 
-  <div class="contact-row">
-    <div class="field">
-      <input type="email" id="email" placeholder="Adresse email *" />
-      <small class="error" id="email-error"></small>
-    </div>
+              <div class="field">
+                <label for="phone" class="sr-only">Numéro de téléphone</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  autocomplete="tel"
+                  placeholder="Numéro de téléphone"
+                />
+              </div>
+            </div>
 
-    <input type="tel" id="phone" placeholder="Numéro de téléphone" />
-  </div>
+            <h3 class="contact-subtitle">Parlez moi de vos besoins</h3>
 
-  <h3 class="contact-subtitle">Parlez moi de vos besoins</h3>
+            <div class="contact-options">
+              <label class="contact-option">
+                <input type="radio" name="besoin" value="Conseil" required />
+                <span>Conseil</span>
+              </label>
 
-  <div class="contact-options">
-    <label class="contact-option">
-      <input type="radio" name="besoin" value="Conseil" required />
-      <span>Conseil</span>
-    </label>
+              <label class="contact-option">
+                <input type="radio" name="besoin" value="Développement web" />
+                <span>Développement web</span>
+              </label>
 
-    <label class="contact-option">
-      <input type="radio" name="besoin" value="Développement web" />
-      <span>Développement web</span>
-    </label>
+              <label class="contact-option">
+                <input type="radio" name="besoin" value="Référencement SEO" />
+                <span>Référencement / SEO</span>
+              </label>
+            </div>
 
-    <label class="contact-option">
-      <input type="radio" name="besoin" value="Référencement SEO" />
-      <span>Référencement / SEO</span>
-    </label>
-  </div>
+            <div class="field">
+              <label for="message" class="sr-only">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Message *"
+                required
+                aria-describedby="message-error"
+              ></textarea>
+              <small
+                class="error"
+                id="message-error"
+                aria-live="polite"
+              ></small>
+            </div>
 
-  <textarea id="message" placeholder="Message *"></textarea>
-  <small class="error" id="message-error"></small>
-
-  <button type="submit" class="contact-submit">Envoyer</button>
-
-</form>
+            <button type="submit" class="contact-submit">Envoyer</button>
+          </form>
+        </section>
       </section>
     </main>
 

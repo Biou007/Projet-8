@@ -96,6 +96,19 @@ section[id] {
   top: 20px;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
+}
+
 .container {
   max-width: 1200px;
   width: 100%;
@@ -904,10 +917,12 @@ button:focus-visible {
 }
 
 /* focus */
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #e8a9a9;
-  background: rgba(255, 255, 255, 0.9);
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible {
+  border-color: #111;
+  outline: 3px solid #111;
+  outline-offset: 3px;
+  background: rgba(255, 255, 255, 0.95);
 }
 
 /* ligne email + tel */
@@ -959,7 +974,16 @@ button:focus-visible {
 }
 
 .contact-option input {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
 }
 
 .contact-option span {
@@ -985,6 +1009,11 @@ button:focus-visible {
 .contact-option input:checked + span {
   background: #f6d6d6;
   border-color: #e8a9a9;
+}
+
+.contact-option input:focus-visible + span {
+  outline: 3px solid #111;
+  outline-offset: 3px;
 }
 
 /* textarea */
