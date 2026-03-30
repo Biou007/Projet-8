@@ -1390,7 +1390,12 @@ button:focus-visible {
 
   .project-links {
     flex-direction: column;
+    align-items: center;
     gap: 10px;
+  }
+
+  .project-links a {
+    align-self: center;
   }
 
   .contact-container {
