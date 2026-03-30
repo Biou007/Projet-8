@@ -244,6 +244,7 @@ button:focus-visible {
   border-radius: 8px;
 }
 
+/* section intro */
 .intro {
   background-color: #f4efea;
   padding: 160px 0 100px;
@@ -285,7 +286,10 @@ button:focus-visible {
   z-index: 2;
 }
 
-.intro-kicker,
+.intro-kicker {
+  color: #6e3f32;
+}
+
 .section-kicker,
 .parcours-subtitle,
 .projects-subtitle {
@@ -970,7 +974,15 @@ button:focus-visible {
   flex-wrap: wrap;
   width: 100%;
   min-width: 0;
-  margin-bottom: 20px;
+  border: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.contact-options legend {
+  float: left;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
 .contact-option input {
