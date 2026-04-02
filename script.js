@@ -99,8 +99,6 @@ navLinks.forEach((link) => {
 
 // Menu hamburger sur mobile
 
-// Menu hamburger sur mobile
-
 const hamburger = document.querySelector(".hamburger");
 const menu = document.querySelector(".menu");
 const overlay = document.querySelector(".menu-overlay");

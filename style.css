@@ -412,11 +412,11 @@ button:focus-visible {
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
 }
 
-.about-text h2,
-.parcours-text h2,
-.skills-text h2,
-.projects h2,
-.contact h2 {
+.about-text h3,
+.parcours-text h3,
+.skills-text h3,
+.projects h3,
+.contact h3 {
   font-size: clamp(24px, 5vw, 40px);
   margin: 0 0 20px;
   line-height: 1.2;
